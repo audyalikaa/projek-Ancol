@@ -27,6 +27,7 @@ void tampilHarga()
   {
     char nama[50];
     int menu;
+    int hargaDasar;
 
     int hari, tipe, wahana, kendaraan;
 
@@ -54,29 +55,39 @@ void tampilHarga()
 
       printf("\nPilih tipe tiket: \n");
       printf("1. personal\n");
-      printf("2. couple");
-      printf("3. family");
+      printf("2. couple\n");
+      printf("3. family\n");
       printf("pilihan: ");
       scanf("%d", &tipe);
 
       printf("\nPilih wahana: \n");
       printf("1. ancol only\n");
-      printf("2. dufan");
-      printf("3. atlantis");
-      printf("4. samudra");
-      printf("5. seaworld");
+      printf("2. dufan\n");
+      printf("3. atlantis\n");
+      printf("4. samudra\n");
+      printf("5. seaworld\n");
       printf("pilihan: ");
       scanf("%d", &wahana);
 
       printf("\nPilih kendaraan: \n");
       printf("1. motor\n");
-      printf("2. mobil");
+      printf("2. mobil\n");
       printf("3. tanpa kendaraan");
-      printf("4. bus");
+      printf("4. bus\n");
       printf("pilihan: ");
       scanf("%d", &kendaraan);
 
-
+      switch (wahana) {
+        case 1: hargaDasar = 250000; break;
+        case 2: hargaDasar = 150000; break;
+        case 3: hargaDasar = 200000; break;
+        case 4: hargaDasar = 180000; break;
+        default:
+            printf("Wahana tidak valid! Default Dufan.\n");
+            hargaDasar = 250000;
+            wahana = 1;
+            break;
     }
+  }
     return 0;
   }
